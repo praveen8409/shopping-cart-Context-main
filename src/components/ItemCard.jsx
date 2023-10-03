@@ -11,7 +11,14 @@ function ItemCard({ name, price }) {
     setItem(item+1);
   };
 
-  const handleRemove = () => {};
+  const handleRemove = () => {
+    if(total<=0){
+      return
+    }else{
+      setTotal((prevState)=> prevState - price);
+      setItem(item - 1);
+    }
+  };
 
   return (
     <div className={styles.itemCard}>
