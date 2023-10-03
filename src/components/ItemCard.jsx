@@ -7,7 +7,6 @@ import { itemContext } from "../itemContext";
 function ItemCard({ name, price }) {
   const {item,setItem,total,setTotal} = useContext(itemContext);
 
-
   const handleAdd = () => {
     setTotal(total+price);
     setItem(item+1);
