@@ -4,10 +4,11 @@ import { useContext } from "react";
 import { itemContext } from "../itemContext";
 
 function ItemCard({ name, price }) {
-  const {total, setTotal} = useContext(itemContext);
+  const {total, setTotal,item, setItem} = useContext(itemContext);
 
   const handleAdd = () => {
     setTotal(total+price);
+    setItem(item+1);
   };
 
   const handleRemove = () => {};
