@@ -3,7 +3,7 @@ import styles from "../styles/ItemCard.module.css";
 import { itemContext, useValue } from "../itemContext";
 
 
-function ItemCard({ name, price }) {
+function ItemCard({ id,name, price }) {
   // const {item,setItem,total,setTotal} = useValue();
 
   const {handleAdd,handleRemove} = useValue();
@@ -27,7 +27,7 @@ function ItemCard({ name, price }) {
       <div className={styles.itemName}>{name}</div>
       <div className={styles.itemPrice}>&#x20B9; {price}</div>
       <div className={styles.itemButtonsWrapper}>
-        <button className={styles.itemButton} onClick={() => handleAdd(price)}>
+        <button className={styles.itemButton} onClick={() => handleAdd({id, name, price})}>
           Add
         </button>
         <button className={styles.itemButton} onClick={() => handleRemove(price)}>
